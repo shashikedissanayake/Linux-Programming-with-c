@@ -1,0 +1,2 @@
+hello world
+hello world write from file I/O using linux chello world write from file I/O using linux c
