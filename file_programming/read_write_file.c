@@ -16,13 +16,13 @@ int main(){
 	buffer[size] = '\0';
 	printf("data read:%s\n",buffer);
 
-	sprintf(buffer,"hello world write from file I/O using linux c");
+	sprintf(buffer,"hello world write from file I/O using linux c\n");
 
-	size = write(fd,buffer,45);
+	size = write(fd,buffer,47);
 	if(size == -1)
 		return -1;
-	close(fd);
-	fd = open("../text.txt",O_RDONLY);
+	if(lseek(fd,0,SEEK_SET) == -1)
+		return -1;
 
 	size = read(fd,buffer,sizeof(buffer)-1);
         if(size == -1)
